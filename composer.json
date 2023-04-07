@@ -1,0 +1,16 @@
+{
+    "name": "codespace/lista-tarefas",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Codespace\\ListaTarefas\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Guilherme Amaral",
+            "email": "gui.amaral123@outlook.com"
+        }
+    ],
+    "require": {}
+}
