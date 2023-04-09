@@ -3,11 +3,9 @@
 return [
     "target_php_version" => '^8.0',
     'directory_list' => [
-        'src',
-        'vendor/symfony/dom-crawler',
-        'vendor/guzzlehttp/guzzle',
-        'vendor/psr/http-message'
+        'src'
     ],
+    'exclude_file_regex' => '@^vendor/.*/(tests?|Tests?)/@',
     "exclude_analysis_directory_list" => [
         'vendor/'
     ],
