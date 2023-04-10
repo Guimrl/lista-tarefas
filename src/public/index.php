@@ -32,4 +32,4 @@
     </div>
 </div>
 
-<?php require_once __DIR__ . './components/footer.html';?>
+<?php require_once __DIR__ . './components/footer.html'; ?>
