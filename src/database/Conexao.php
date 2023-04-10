@@ -1,5 +1,10 @@
 <?php
 
+namespace src\database;
+
+use PDO;
+use PDOException;
+
 class Conexao
 {
     private $host = 'localhost';

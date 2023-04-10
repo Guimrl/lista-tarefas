@@ -2,7 +2,7 @@
     "name": "guiam/lista-tarefas",
     "autoload": {
         "psr-4": {
-            "Guiam\\ListaTarefas\\": "src/"
+            "src\\": "src/"
         }
     },
     "authors": [

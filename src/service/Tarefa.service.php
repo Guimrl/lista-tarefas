@@ -1,5 +1,11 @@
 <?php
 
+namespace src\service;
+
+use PDO;
+use src\model\Tarefa;
+use src\database\Conexao;
+
 class TarefaService
 {
     private $conexao;
@@ -19,7 +25,7 @@ class TarefaService
         $stmt->execute();
     }
 
-    public function recuperar(): array|false
+    public function recuperar()
     {
         $query = 'SELECT t.id, s.status, t.tarefa FROM tb_tarefas AS t LEFT JOIN tb_status AS s ON (t.id_status = s.id);';
         $stmt = $this->conexao->prepare($query);
