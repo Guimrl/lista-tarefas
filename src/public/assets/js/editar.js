@@ -30,11 +30,3 @@ function editar(id, txtTarefa) {
     tarefa.insertBefore(form, tarefa[0]);
 
 }
-
-function remover(id) {
-    location.href = `index.php?pag=index&acao=remover&id=${id}`;
-}
-
-function marcarRealizada(id) {
-    location.href = `index.php?pag=index&acao=marcarRealizada&id=${id}`;
-}

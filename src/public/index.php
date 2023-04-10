@@ -1,18 +1,8 @@
 <?php
 $acao = 'recuperarTarefasPendentes';
 require 'tarefa_controller.php';
-require_once __DIR__ . './components/header.html';
+require_once __DIR__ . './components/header.php';
 ?>
-
-<div class="container app">
-    <div class="row">
-        <div class="col-md-3 menu">
-            <ul class="list-group">
-                <li class="list-group-item active"><a href="#">Tarefas pendentes</a></li>
-                <li class="list-group-item"><a href="nova_tarefa.php">Nova tarefa</a></li>
-                <li class="list-group-item"><a href="todas_tarefas.php">Todas tarefas</a></li>
-            </ul>
-        </div>
 
         <div class="col-md-9">
             <div class="container pagina">
