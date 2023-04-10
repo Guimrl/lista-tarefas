@@ -6,6 +6,7 @@ require '../model/Tarefa.model.php';
 require '../database/Conexao.php';
 require '../service/Tarefa.service.php';
 
+use PSpell\Config;
 use src\database\Conexao;
 use src\model\Tarefa;
 use src\service\TarefaService;
@@ -13,7 +14,6 @@ use src\service\TarefaService;
 $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
 switch ($acao) {
-
     case 'recuperarTarefasPendentes':
         $tarefa = new Tarefa();
         $tarefa->__set('id_status', 1);
@@ -34,5 +34,29 @@ switch ($acao) {
         $tarefaService->inserir();
 
         header('Location: nova_tarefa.php?inclusao=1');
+        break;
+
+    case 'recuperar':
+        break;
+
+    case 'atualizar':
+        $tarefa = new Tarefa();
+        $tarefa->__set('id', $_POST['id'])->__set('tarefa', $_POST['tarefa']);
+
+        $conexao = new Conexao();
+        $tarefaService = new TarefaService($conexao, $tarefa);
+        if ($tarefaService->atualizar()) {
+            if(isset($_GET['pag']) && $_GET['pag'] == 'index') {
+                header('location: index.php');
+            } else {
+                header('location: todas_tarefas');
+            }
+        }
+        break;
+
+    case 'remover':
+        break;
+
+    case 'marcarRealizada':
         break;
 }
