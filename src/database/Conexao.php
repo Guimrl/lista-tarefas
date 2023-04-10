@@ -16,7 +16,6 @@ class Conexao
     {
         try {
             $conexao = new PDO(
-                //dsn
                 "mysql:host=$this->host;dbname=$this->dbname",
                 "$this->user",
                 "$this->pass"
