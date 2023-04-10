@@ -15,10 +15,23 @@
         "phan/phan": "^5.4"
     },
     "require-dev": {
-        "phpunit/phpunit": "^10.0",
+        "phpunit/phpunit": "^9.0",
         "squizlabs/php_codesniffer": "^3.7"
     },
     "scripts": {
-        "start": "php -S localhost:8000 -t public"
+        "start": "php -S localhost:8000 -t public",
+        "test": "phpunit tests\\",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan --allow-polyfill-parser",
+        "check": [
+            "@phan", "@cs", "@test"
+        ]
+    },
+    "scripts-descriptions": {
+        "start": "starts the integrated php server",
+        "test": "starts phpunit in selected folder",
+        "cs": "look for errors in code using code sniffer",
+        "phan": "detect errors in the code pattern using phan",
+        "check": "starts all scripts defined: test, cs, phan"
     }
 }
